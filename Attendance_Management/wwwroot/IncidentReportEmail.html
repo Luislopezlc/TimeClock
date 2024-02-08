@@ -1,0 +1,111 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>TABLA</title>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 2px solid rgb(22, 22, 22);
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        th {
+            font-family: 'Segoe UI';
+            white-space: normal;
+        }
+
+        /* Estilos para hacer la tabla responsive en dispositivos móviles */
+        @media (max-width: 767px) {
+            table {
+                width: 100%;
+            }
+
+            th, td {
+                padding: 5px;
+                font-size: 14px; /* Ajusta el tamaño de fuente según sea necesario */
+            }
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div style='display: flex;justify-content: center;margin-bottom: 69px; margin-top: 69px;'>
+        <img src='cid:logo' />
+    </div>
+    <h2>Reporte de incidencias</h2>
+    <div>
+        <h4>Estimado/a {employeeIncidentReport.FirstName}</h4>
+        <p style='margin-bottom: 20px;'>
+            Quisiera informarle que hemos
+            compilado un reporte detallado de las incidencias registradas durante
+            el periodo de {initialDate} al {endDate}
+        </p>
+        <p style='margin-bottom: 20px;'>
+            El informe de incidencias incluye detalles sobre ausencias, retardos
+            y otras observaciones relevantes para el seguimiento y la mejora
+            de nuestra gestión de recursos humanos.
+            Por lo que tiene tres días a partir del día de hoy para realizar sus gestiones pertinentes al departamento de recursos humanos.
+        </p>
+        <p style='margin-bottom: 20px;'>
+            Por favor, tengan en cuenta que este reporte tiene como objetivo brindar
+            transparencia y fomentar un ambiente de trabajo óptimo. Apreciamos enormemente
+            su compromiso con el cumplimiento de los horarios y políticas establecidas.
+        </p>
+    </div>
+    <div style='width: 100%;'>
+        <table style='width: 100%;'>
+            <tr style='background: #F47325;color: #FCF4F4;'>
+                <th>Empleados</th>
+                <th>Faltas</th>
+                <th>Fechas faltas</th>
+                <th>Fechas faltas antes de la hora de salida</th>
+                <th>Retardos menores</th>
+                <th>Fechas retardos menores</th>
+                <th>Retardos mayores</th>
+                <th>Fechas retardos mayores</th>
+                <th>Total descuentos</th>
+            </tr>
+            <tr>
+                <td>{employeeIncidentReport.FullName}</td>
+                <td>{employeeIncidentReport.Absences}</td>
+                <td>{absenceListDates}</td>
+                <td>{absenceWithoutListDates}</td>
+                <td>{employeeIncidentReport.MinorDelays}</td>
+                <td>{minorListDates}</td>
+                <td>{employeeIncidentReport.LongerDelays}</td>
+                <td>{longerListDates}</td>
+                <td>{employeeIncidentReport.TotalIncidents}</td>
+            </tr>
+        </table>
+
+    </div>
+    <div>
+        <p>
+            Si tienen alguna pregunta o inquietud acerca de los datos presentados, no duden
+            en comunicarse con el Departamento de Recursos Humanos. Estaremos encantados de
+            brindarles la asistencia necesaria.
+        </p>
+        <p> ¡Gracias por su atención! </p>
+        <p>Atentamente:</p>
+        <p>Departamento de Recursos Humanos Ext. 141 998-283-1859</p>
+        <p>rec.humanos@upqroo.edu.mx</p>
+        <p>Universidad politécnica de Quintana Roo | Formando Triunfadores</p>
+        <p>Ingeniería en Software</p>
+        <a href='https://docs.google.com/spreadsheets/d/1Sq7TFgo-_4hOTRrQMeme0RAOJq3ff7P_/edit?usp=sharing&ouid=105496011807366898531&rtpof=true&sd=true'>
+            Descargue aquí el formato de solicitud de permisos
+        </a>
+        <p>No contestar a este correo</p>
+    </div>
+</body>
+</html>
+
